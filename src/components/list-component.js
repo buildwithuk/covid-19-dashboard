@@ -1,10 +1,13 @@
 import React from 'react';
 import axios from 'axios';
 
+
 class ListComponent extends React.Component {
 
-    constructor(props) {
 
+    constructor(props) {
+        
+        
         super(props);
         this.fetchListItems = this.fetchListItems.bind(this);
         this.countrySelected = this.countrySelected.bind(this);
@@ -15,7 +18,7 @@ class ListComponent extends React.Component {
     }
 
     fetchListItems() {
-        axios.get('http://localhost:5000/api/countries/list').then((res) => {
+        axios.get(`${process.env.REACT_APP_BASE_URL}countries`).then((res) => {
             
             if (res) {
                 this.countries = res.data.response;

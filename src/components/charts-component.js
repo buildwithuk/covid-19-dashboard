@@ -253,7 +253,7 @@ class ChartsComponent extends React.Component {
         }
 
 
-        axios.get('http://localhost:5000/api/statistics/' + country).then((res) => {
+        axios.get(`${process.env.REACT_APP_BASE_URL}statistics/${country}`).then((res) => {
             if (res) {
 
                 this.statsData = {
@@ -269,7 +269,7 @@ class ChartsComponent extends React.Component {
             }
         });
 
-        axios.get('http://localhost:5000/api/history/' + country).then((res) => {
+        axios.get(`${process.env.REACT_APP_BASE_URL}history/${country}`).then((res) => {
 
             if (res && res.data.response != null) {
                 this.historicData = res.data.response;
