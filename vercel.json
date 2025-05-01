@@ -1,0 +1,9 @@
+{
+    "rewrites": [
+      {
+        "source": "/api/:path*",
+        "destination": "https://covid-19-api-ten-omega.vercel.app/api/:path*"
+      }
+    ]
+  }
+  
